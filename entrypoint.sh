@@ -1,7 +1,5 @@
 #!/bin/bash
 
-# Générer la clé d'application si elle n'existe pas déjà 
-php artisan key:generate --force
 
 # Mettre en cache la configuration pour de meilleurs performances
 php artisan config:cache
