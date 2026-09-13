@@ -1,7 +1,7 @@
 <x-admin-layout>
     <h1 class="text-2xl font-bold mb-6">Dashboard</h1>
 
-    <div class="grid grid-cols-4 gap-6 mb-8">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
         <div class="bg-white rounded-lg shadow p-6">
             <p class="text-sm text-gray-500">Commandes totales</p>
             <p class="text-3xl font-bold mt-1">{{ $stats['totalOrders'] }}</p>

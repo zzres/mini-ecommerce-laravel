@@ -52,9 +52,9 @@
 
         <div x-show="cartEntries.length > 0">
             <template x-for="[productId, item] in cartEntries" :key="productId">
-                <div class="flex items-center justify-between border-b py-4">
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between border-b py-4 gap-3">
                     <div class="flex items-center gap-4">
-                        <div class="w-16 h-16 bg-gray-200 rounded flex items-center justify-center text-xs text-gray-400">
+                        <div class="w-16 h-16 bg-gray-200 rounded flex items-center justify-center text-xs text-gray-400 flex-shrink-0">
                             IMG
                         </div>
                         <div>
@@ -63,28 +63,30 @@
                         </div>
                     </div>
 
-                    <div class="flex items-center gap-3">
+                    <div class="flex items-center justify-between sm:justify-end sm:gap-6">
+                        <div class="flex items-center gap-3">
+                            <button
+                                @click="updateQuantity(productId, item.quantity - 1)"
+                                class="w-8 h-8 border rounded hover:bg-gray-100"
+                            >-</button>
+
+                            <span x-text="item.quantity" class="w-6 text-center"></span>
+
+                            <button
+                                @click="updateQuantity(productId, item.quantity + 1)"
+                                class="w-8 h-8 border rounded hover:bg-gray-100"
+                            >+</button>
+                        </div>
+
+                        <p class="font-semibold w-20 text-right" x-text="(item.price * item.quantity).toFixed(2) + ' €'"></p>
+
                         <button
-                            @click="updateQuantity(productId, item.quantity - 1)"
-                            class="w-8 h-8 border rounded hover:bg-gray-100"
-                        >-</button>
-
-                        <span x-text="item.quantity" class="w-6 text-center"></span>
-
-                        <button 
-                            @click="updateQuantity(productId, item.quantity + 1)"
-                            class="w-8 h-8 border rounded hover:bg-gray-100"
-                        >+</button>
+                            @click="removeItem(productId)"
+                            class="text-red-500 hover:text-red-700 text-sm ml-4"
+                        >
+                            Supprimer
+                        </button>
                     </div>
-
-                    <p class="font-semiblod w-20 text-right" x-text="(item.price * item.quantity).toFixed(2) + ' €'"></p>
-
-                    <button
-                        @click="removeItem(productId)"
-                        class="text-red-500 hover:text-red-700 text-sm ml-4"
-                    >
-                        supprimer
-                    </button>
                 </div>
             </template>
 
