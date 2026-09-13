@@ -16,10 +16,10 @@ class CategorySeeder extends Seeder
         $categories = ['Vêtements', 'Electronique', 'Maison & Déco', 'Sport & Loisirs'];
 
         foreach ($categories as $name) {
-            Category::create([
-                'name' => $name,
-                'slug' => str()->slug($name), // transforme "maison & déco" en maison-deco"
-            ]);
+            Category::firstOrCreate(
+                ['name' => $name],
+                ['slug' => str()->slug($name)] // transforme "maison & déco" en maison-deco"
+            );
         }
     }
 }

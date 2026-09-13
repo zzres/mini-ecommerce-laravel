@@ -25,13 +25,15 @@ class ProductSeeder extends Seeder
         ];
 
         foreach ($products as $product) {
-            Product::create([
-                'name' => $product['name'],
-                'description' => 'Description de démonstration pour ' . $product['name'],
-                'price' => $product['price'],
-                'stock' => $product['stock'],
-                'category_id' => $categories->random()->id, // assigne une categorie au hasard
-            ]);
+            Product::firstOrCreate(
+                ['name' => $product['name']],
+                [
+                    'description' => 'Description de démonstration pour ' . $product['name'],
+                    'price' => $product['price'],
+                    'stock' => $product['stock'],
+                    'category_id' => $categories->random()->id, // assigne une categorie au hasard
+                ]
+            );
         }
     }
 }
