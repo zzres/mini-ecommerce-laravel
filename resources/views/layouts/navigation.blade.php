@@ -98,6 +98,14 @@
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
+
+            <x-responsive-nav-link :href="route('cart.index')" :active="request()->routeIs('cart.index')">
+                🛒 Panier
+            </x-responsive-nav-link>
+
+            <x-responsive-nav-link :href="route('my-orders.index')" :active="request()->routeIs('my-orders.index')">
+                Mes commandes
+            </x-responsive-nav-link>
         </div>
 
         <!-- Responsive Settings Options -->
