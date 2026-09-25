@@ -41,10 +41,10 @@ Une plateforme e-commerce complète développée avec Laravel, incluant un catal
 
 ## 📸 Aperçu
 
-![alt text](image-1.png)
-![alt text](image-2.png)
-![alt text](image-3.png)
-![alt text](image-4.png)
+![alt text](IMG/image-1.png)
+![alt text](IMG/image-2.png)
+![alt text](IMG/image-3.png)
+![alt text](IMG/image-4.png)
 
 ## 🧠 Choix techniques
 
@@ -76,4 +76,5 @@ php artisan serve
 
 ## 👤 Auteur
 
-Développé par SAMINZERE ZERO — [lien vers ton profil Codeur.com ou LinkedIn]
+Développé par Alvain Junior Saminzere Zero 
+Retrouvez-moi sur [Codeur.com](https://www.codeur.com/-alvainz23) pour vos projets de développement web.
