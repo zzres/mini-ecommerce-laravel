@@ -46,6 +46,14 @@ Une plateforme e-commerce complète développée avec Laravel, incluant un catal
 ![alt text](image-3.png)
 ![alt text](image-4.png)
 
+## 🧠 Choix techniques
+
+- **Panier géré en session (pas en base de données)** : permet à un visiteur d'ajouter des produits sans créer de compte, réduisant la friction avant l'achat. Le panier n'est lié à un compte qu'au moment du checkout.
+- **Vérification du stock au moment du checkout, pas seulement à l'affichage** : évite la survente si le stock a changé entre la consultation du produit et la validation de la commande.
+- **Transaction de base de données sur la création de commande** : garantit qu'une commande n'est jamais enregistrée partiellement (commande créée sans ses articles, par exemple) en cas d'erreur en cours de traitement.
+- **Upload d'image avec conservation en cas de non-modification** : lors de l'édition d'un produit, l'image existante est préservée si l'admin ne fournit pas de nouveau fichier.
+- **Accès admin par rôle, pas par sous-domaine séparé** : simplifie le déploiement tout en gardant une séparation stricte des permissions via middleware.
+
 ## ⚙️ Installation locale
 
 ```bash
